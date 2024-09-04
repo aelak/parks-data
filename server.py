@@ -25,14 +25,20 @@ def index():
 
     # 2) Populate
     rows = []
+    #There is a data dictionary, containing a list of parks which uses a park dictionary
     for d in data_list:
         for park in d['parks']: 
             row = {} 
-            for col in selected_cols:
-                if col == 'Category' or col == 'Category ID':
+            for col in selected_cols: #For only user-selected columns
+                #These two are items in the data dictionary
+                if col in {'Category', 'Category ID'}: 
                     row[col] = d[col_map[col]]
-                elif col == 'Park Name':
+                
+                #'Category' and 'Park Name' are both 'name' in raw data, here it is specified that 'Park Name' is the name in the park dictionary
+                elif col == 'Park Name': 
                     row[col] = park[col_map[col]]
+                
+                #The rest all belongs in the park dictionary
                 elif col in col_map:
                     row[col] = park.get(col_map[col], None)
             rows.append(row)
@@ -52,5 +58,5 @@ def index():
     return render_template('index.html', stats=park_stats, columns=selected_cols, headers=headers, col_map=col_map)
 
 if __name__ == "__main__":
-    serve(app, host="0.0.0.0", port=8000)
+    serve(app, host="0.0.0.0", port=8000) # production server
     #app.run(host="0.0.0.0", port=8000) #for running in development server

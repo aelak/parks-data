@@ -18,10 +18,13 @@ def get_data():
     return data_list
 
 '''
-Data Structure of Raw Data:
+Data structure and content of raw data:
     keys for parsed:  dict_keys(['total', 'limit', 'start', 'data'])
     keys for 1st item in data:  dict_keys(['id', 'name', 'parks'])
     keys for 1st item in parks:  dict_keys(['states', 'parkCode', 'designation', 'fullName', 'url', 'name'])
+    
+displaying_col() maps raw data label to custom labels (parkCode -> Park Code)
+Add, remove, or rename entries in displaying_col to change which data are included and how they are displayed.
 '''
 def displaying_col():
     return {

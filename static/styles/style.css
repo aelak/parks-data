@@ -33,8 +33,18 @@ body {
     z-index: -2;
 }
 
+.mb-4 {
+    margin-bottom: 0; 
+}
+
+.title-description {
+    margin-top: 0; 
+    font-size: small;
+    color: #333;
+}
+
 .checkbox-label {
-    margin-top: 20px;
+    margin-top: 5px;
     margin-bottom: 10px;
     font-weight: bold;
 }
@@ -144,4 +154,3 @@ body {
 .count-checkbox {
     margin-top: 0px; 
 }
-

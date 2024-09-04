@@ -16,8 +16,6 @@ def count_now(table, headers):
     cat = {'Category', 'Category ID'}
     category_cols = list(set(no_count_headers) & cat)
     park_cols = list(set(no_count_headers) - cat)
-    print("this is category_cols:", category_cols)
-    print("this is park_cols:", park_cols)
     
     if category_cols:
         group_col = category_cols[0]
