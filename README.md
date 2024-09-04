@@ -1,7 +1,16 @@
 # National Park Search Engine
-This project hosts a single-page web application that allows users to search, filter, and display national parks data derived from https://data.gov/
+This project hosts a single-page web application that allows users to search, filter, and display national parks data derived from https://data.gov/.
 
 ## Data Overview
+The available data from source are listed on the left panel on the webpage and are as follows:
+- Category: 40 categories (Arts and Culture, Astronomy ...)
+- Category ID: 40 unique ID for each category (01D717BC-18BB-4FE4-95BA-6B13AD702038 ...)
+- Park Name: 463 parks (Acadia, White Sands ...)
+- Park Code: 464 park codes (not 463 due to 'Natchez Trace' having two Park Codes 'natr' and 'natt')
+- Park Designation: 48 designations (Memorial, National Park, Wild River ...)
+- Park Full Name: 464 parks (not 463 due to 'Natchez Trace' is shortened from two full names 'Natchez Trace National Scenic Trail' and 'Natchez Trace Parkway')
+- Park URL: 464 urls to park website on https://www.nps.gov/
+- States: 110 state(s), including single states (CT) and combinations (CT,GA,MA,MD,ME,NC). 
 
 ## For Users
 ### Feature:
@@ -14,6 +23,8 @@ This project hosts a single-page web application that allows users to search, fi
 1. **Count parks by category:** 
 
 Select 'Category' and 'Count' to see the number of parks in each category. Sort 'Count' in order to see that the most popular category among parks is 'Junior Ranger Program' (379) and the least is 'Team Sports' (2). 
+<img width="1350" alt="ex-1" src="https://github.com/user-attachments/assets/4c8fdc93-4564-4bb7-8b7a-fb2679892ffb">
+
 
 2. **Count categories by parks:** 
 
@@ -26,18 +37,18 @@ Select 'Category', 'Park Name', and 'State', click 'Update Table', then under Bi
 ## For Developers:
 ### Code Structure:
 Backend:
-1. `parse.py`
-2. `server.py`
-3. `function.py`
+1. `parse.py`: pulls data from an url, contains mapping from raw data to display data which are checkboxes that can be added, removed, or renamed from the webpage. 
+2. `server.py`: built with Flask to host the webpage. It receives user-selected columns from the frontend, fetches data from `parse.py` and populates the data table.
+3. `function.py`: contains the `count_now` function that calculates Count of Parks and Count of Categories depending on user-selected columns
 
 Frontend:
-1. `index.html`
-2. `style.css`
+1. `index.html`: organizes the frontend layout of title, checkboxes, and table. It retrieves a list of user-selected columns and uses for loop to flexibly populate the table
+2. `style.css`: defines the color scheme and fonts of webpage elements
 
 ### To set up this webpage locally:
 
 ## Acknowledgments
 **Background image:** The background image used in this application is provided by Vecteezy (Vecteezy.com) under their Free License.
 
-**DataTables:** an open-source software for creating HTML tables. More details and documentation can be found at [DataTables official website](https://datatables.net/). DataTables is licensed under the MIT License. Copyright (C) 2008-2024 by SpryMedia Ltd.
+**DataTables:** an open-source library for creating HTML tables. More details and documentation can be found at [DataTables official website](https://datatables.net/). DataTables is licensed under the MIT License. Copyright (C) 2008-2024 by SpryMedia Ltd. 
 
