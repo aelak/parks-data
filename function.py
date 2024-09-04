@@ -20,4 +20,3 @@ def count_now(table, headers):
         table = pd.merge(table.drop_duplicates(), count_df, on=group_col, how='left')
     
     return table, label
-

@@ -24,13 +24,11 @@
                 </div>
                 {% endfor %}
 
-                {% if show_count %}
                 <div class="checkbox-label"><strong>Apply Function</strong></div>
                 <div class="count-checkbox">
                     <input type="checkbox" id="count" name="cols" value="count" {{ 'count' in columns and 'checked' or '' }}>
                     <label for="count">Count</label>
                 </div>
-                {% endif %}
                 
                 <button type="submit" class="update-button">Update Table</button>
             </form>

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from parse import get_data, displaying_col, include_count
+from parse import get_data, displaying_col
 import pandas as pd
 from waitress import serve
 from function import count_now
@@ -13,7 +13,6 @@ def index():
     parsed = get_data()
     data_list = parsed['data']
     col_map = displaying_col()
-    show_count = include_count()
 
     rows = []
     for d in data_list:
@@ -39,10 +38,9 @@ def index():
             table = table.drop_duplicates(subset=selected_cols)
 
     park_stats = table.to_dict(orient='records')
-    return render_template('index.html', stats=park_stats, columns=selected_cols, headers=headers, col_map=col_map, show_count=show_count)
+    return render_template('index.html', stats=park_stats, columns=selected_cols, headers=headers, col_map=col_map)
 
 if __name__ == "__main__":
     #serve(app, host="0.0.0.0", port=8000)
     app.run(host="0.0.0.0", port=8000)
-
 

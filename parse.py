@@ -31,8 +31,5 @@ def displaying_col():
         'States': 'states'            
     }
 
-def include_count():
-    return True
-
 if __name__ == "__main__":
     print("displaying data")
