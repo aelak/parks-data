@@ -1,16 +1,23 @@
 # National Park Search Engine
-This project hosts a single-page web application that allows users to search, filter, and display national parks data derived from https://data.gov/.
+This project hosts a single-page web application that allows users to search, filter, and display national parks data derived from https://data.gov/. 
+
+Author: **Kalea Ramsey**
+
+For inquiries or further information, feel free to contact me:
+
+- **Email:** [kalear01@gmail.com](mailto:kalear01@gmail.com)
+- **LinkedIn:** [Visit my LinkedIn](https://www.linkedin.com/in/kramsey-rs1803)
 
 ## Data Overview
 The available data from the source are listed on the left panel of the webpage and are as follows:
-- Category: 40 categories (Arts and Culture, Astronomy ...)
-- Category ID: 40 unique ID for each category (01D717BC-18BB-4FE4-95BA-6B13AD702038 ...)
-- Park Name: 463 parks (Acadia, White Sands ...)
-- Park Code: 464 park codes (not 463 due to 'Natchez Trace' having two Park Codes 'natr' and 'natt')
-- Park Designation: 48 designations (Memorial, National Park, Wild River ...)
-- Park Full Name: 464 parks (not 463 due to 'Natchez Trace' being shortened from two full names 'Natchez Trace National Scenic Trail' and 'Natchez Trace Parkway')
-- Park URL: 464 urls to park website on https://www.nps.gov/
-- States: 110 state(s), including single states (CT) and combinations (CT,GA,MA,MD,ME,NC). 
+- **Category:** 40 categories (Arts and Culture, Astronomy ...)
+- **Category ID:** 40 unique ID for each category (01D717BC-18BB-4FE4-95BA-6B13AD702038 ...)
+- **Park Name:** 463 parks (Acadia, White Sands ...)
+- **Park Code:** 464 park codes (not 463 due to 'Natchez Trace' having two Park Codes 'natr' and 'natt')
+- **Park Designation:** 48 designations (Memorial, National Park, Wild River ...)
+- **Park Full Name:** 464 parks (not 463 due to 'Natchez Trace' being shortened from two full names 'Natchez Trace National Scenic Trail' and 'Natchez Trace Parkway')
+- **Park URL:** 464 urls to park website on https://www.nps.gov/
+- **States:** 110 state(s), including single states (CT) and combinations (CT,GA,MA,MD,ME,NC). 
 
 ## For Users
 ### Feature:
@@ -47,6 +54,13 @@ Frontend:
 3. `static/js/search.js`: initalizes DataTable and search functionalities. 
 
 ### To set up this webpage locally:
+```bash
+git clone https://github.com/aelak/parks-data.git
+cd parks-data
+pip3 install -r requirements.txt
+python3 server.py
+```
+Last line will start the server and the webpage can be accessed on http://localhost:8000, please go into server.py to switch `serve(app, host="0.0.0.0", port=8000)` to `app.run(host="0.0.0.0", port=8000)` for development server. 
 
 ## Acknowledgments
 **Background image:** The background image used in this application is provided by Vecteezy (Vecteezy.com) under their Free License.
