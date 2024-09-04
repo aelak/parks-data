@@ -19,6 +19,13 @@
         Select columns from Available Data and click Update Table to begin search
     </p>
 
+    <!-- in case of error message -->
+    {% if error %}
+    <div class="error-message" style="color: red; margin-bottom: 15px;">
+        {{ error }}
+    </div>
+    {% endif %}
+    
     <div class="content-container">
         <div class="form-container">
             <form action="/" method="get">
