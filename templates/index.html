@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National Park Statistics</title>
+    <title>National Parks Search Engine</title>
     <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script src="{{ url_for('static', filename='js/search.js') }}"></script>
@@ -12,11 +12,12 @@
 </head>
 <body>
     <div class="background-image"></div>
-    <h1 class="mb-4">National Park Statistics</h1>
+    <h1 class="mb-4">National Parks Search Engine</h1>
     <div class="content-container">
         <div class="form-container">
             <form action="/" method="get">
                 <div class="checkbox-label"><strong>Available Data</strong></div>
+                <!-- loop through col_map to create checkboxes for each available column -->
                 {% for key, name in col_map.items() %}
                 <div>
                     <input type="checkbox" id="{{ key }}" name="cols" value="{{ key }}" {{ key in columns and 'checked' or '' }}>
@@ -25,6 +26,7 @@
                 {% endfor %}
 
                 <div class="checkbox-label"><strong>Apply Function</strong></div>
+                 <!-- checkbox for applying 'Count' -->
                 <div class="count-checkbox">
                     <input type="checkbox" id="count" name="cols" value="count" {{ 'count' in columns and 'checked' or '' }}>
                     <label for="count">Count</label>
@@ -33,9 +35,11 @@
                 <button type="submit" class="update-button">Update Table</button>
             </form>
         </div>
+
+        <!-- table container for displaying the data -->
         <div class="table-container">
-            
             <table id="main_table" class="display">
+                <!-- loop through header for each column -->
                 <thead>
                     <tr>
                         {% for header in headers %}
@@ -43,13 +47,15 @@
                         {% endfor %}
                     </tr>
                 </thead>
+                <!-- loop through search inputs for each column -->
                 <thead>
                     <tr>
                         {% for header in headers %}
-                        <th><input type="text" placeholder="search {{ header }}" class="column_search" data-column-index="{{ loop.index0 }}"></th>
+                        <th><input type="text" placeholder="Search {{ header }}" class="column_search" data-column-index="{{ loop.index0 }}"></th>
                         {% endfor %}
                     </tr>
                 </thead>
+                <!-- loop through rows of data retrieved from stats (server.py) to populate table -->
                 <tbody>
                     {% for row in stats %}
                     <tr>
