@@ -53,7 +53,9 @@ Frontend:
 2. `static/styles/style.css`: defines the color scheme and fonts of webpage elements
 3. `static/js/search.js`: initalizes DataTable and search functionalities. 
 
-### To set up this webpage locally:
+### Setting Up the Webpage Locally
+To run this webpage on your local machine, enter these lines in your terminal:
+
 ```bash
 git clone https://github.com/aelak/parks-data.git
 cd parks-data
