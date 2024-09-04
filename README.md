@@ -2,13 +2,13 @@
 This project hosts a single-page web application that allows users to search, filter, and display national parks data derived from https://data.gov/.
 
 ## Data Overview
-The available data from source are listed on the left panel on the webpage and are as follows:
+The available data from the source are listed on the left panel of the webpage and are as follows:
 - Category: 40 categories (Arts and Culture, Astronomy ...)
 - Category ID: 40 unique ID for each category (01D717BC-18BB-4FE4-95BA-6B13AD702038 ...)
 - Park Name: 463 parks (Acadia, White Sands ...)
 - Park Code: 464 park codes (not 463 due to 'Natchez Trace' having two Park Codes 'natr' and 'natt')
 - Park Designation: 48 designations (Memorial, National Park, Wild River ...)
-- Park Full Name: 464 parks (not 463 due to 'Natchez Trace' is shortened from two full names 'Natchez Trace National Scenic Trail' and 'Natchez Trace Parkway')
+- Park Full Name: 464 parks (not 463 due to 'Natchez Trace' being shortened from two full names 'Natchez Trace National Scenic Trail' and 'Natchez Trace Parkway')
 - Park URL: 464 urls to park website on https://www.nps.gov/
 - States: 110 state(s), including single states (CT) and combinations (CT,GA,MA,MD,ME,NC). 
 
@@ -42,8 +42,9 @@ Backend:
 3. `function.py`: contains the `count_now` function that calculates Count of Parks and Count of Categories depending on user-selected columns
 
 Frontend:
-1. `index.html`: organizes the frontend layout of title, checkboxes, and table. It retrieves a list of user-selected columns and uses for loop to flexibly populate the table
-2. `style.css`: defines the color scheme and fonts of webpage elements
+1. `templates/index.html`: organizes the frontend layout of title, checkboxes, and table. It retrieves a list of user-selected columns and flexibly populates the table using for loops.
+2. `static/styles/style.css`: defines the color scheme and fonts of webpage elements
+3. `static/js/search.js`: initalizes DataTable and search functionalities. 
 
 ### To set up this webpage locally:
 
