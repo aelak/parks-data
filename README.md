@@ -1,5 +1,5 @@
 # National Park Search Engine
-This project hosts a single-page web application that allows users to search, filter, and display national parks data derived from https://data.gov/. 
+This project hosts a single-page web application that allows users to search, filter, and display national parks data derived from https://data.gov/. The webpage is hosted on Render, accessible at https://parks-data.onrender.com and synced with this repository.
 
 Author: **Kalea Ramsey**
 
