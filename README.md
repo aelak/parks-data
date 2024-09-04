@@ -51,4 +51,6 @@ Frontend:
 ## Acknowledgments
 **Background image:** The background image used in this application is provided by Vecteezy (Vecteezy.com) under their Free License.
 
-**DataTables:** an open-source library for creating HTML tables. More details and documentation can be found at [DataTables official website](https://datatables.net/). DataTables is licensed under the MIT License. Copyright (C) 2008-2024 by SpryMedia Ltd. 
+### License Notice for DataTables
+DataTables is licensed under the MIT License. Copyright (C) 2008-2024 by SpryMedia Ltd. For more information on the license, please see the LICENSE file in this repository.
+
