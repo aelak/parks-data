@@ -5,7 +5,7 @@ Author: **Kalea Ramsey**
 
 For inquiries or further information, feel free to contact me:
 
-- **Email:** [kalear01@gmail.com](mailto:kalear01@gmail.com)
+- **Email:** [kalears01@gmail.com](mailto:kalears01@gmail.com)
 - **LinkedIn:** [Visit my LinkedIn](https://www.linkedin.com/in/kramsey-rs1803)
 
 ## Data Overview
